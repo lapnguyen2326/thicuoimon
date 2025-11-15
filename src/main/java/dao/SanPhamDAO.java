@@ -7,16 +7,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import model.SanPham;
 
-/**
- * Data Access Object cho bảng SanPham
- * @author ADMIN
- */
+
 public class SanPhamDAO {
     
-    /**
-     * Lấy 6 sản phẩm khuyến mãi, sắp xếp theo giá giảm dần
-     * @return Danh sách 6 sản phẩm khuyến mãi
-     */
     public ArrayList<SanPham> getTop6Promotion() {
         ArrayList<SanPham> list = new ArrayList<>();
         String query = "SELECT TOP 6 * FROM SanPham WHERE KhuyenMai = 1 ORDER BY DonGia DESC";
@@ -36,11 +29,7 @@ public class SanPhamDAO {
         return list;
     }
     
-    /**
-     * Lấy danh sách sản phẩm theo mã thể loại
-     * @param maLoai Mã thể loại
-     * @return Danh sách sản phẩm thuộc thể loại đó
-     */
+ 
     public ArrayList<SanPham> getByCategory(int maLoai) {
         ArrayList<SanPham> list = new ArrayList<>();
         String query = "SELECT * FROM SanPham WHERE MaLoai = ?";
@@ -63,11 +52,6 @@ public class SanPhamDAO {
         return list;
     }
     
-    /**
-     * Đếm số lượng sản phẩm theo mã thể loại
-     * @param maLoai Mã thể loại
-     * @return Số lượng sản phẩm
-     */
     public int countByCategory(int maLoai) {
         int count = 0;
         String query = "SELECT COUNT(*) FROM SanPham WHERE MaLoai = ?";
@@ -89,12 +73,6 @@ public class SanPhamDAO {
         return count;
     }
     
-    /**
-     * Chuyển đổi ResultSet thành đối tượng SanPham
-     * @param rs ResultSet từ database
-     * @return Đối tượng SanPham
-     * @throws Exception nếu có lỗi khi đọc dữ liệu
-     */
 private SanPham mapResultSetToSanPham(ResultSet rs) throws Exception {
         SanPham sp = new SanPham();
         sp.setMaSP(rs.getInt("MaSP"));

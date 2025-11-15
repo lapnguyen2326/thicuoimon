@@ -7,16 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import model.TheLoai;
 
-/**
- * Data Access Object cho bảng TheLoai
- * @author ADMIN
- */
+
 public class TheLoaiDAO {
     
-    /**
-     * Lấy tất cả các thể loại từ database
-     * @return Danh sách tất cả thể loại
-     */
+
     public ArrayList<TheLoai> getAll() {
         ArrayList<TheLoai> list = new ArrayList<>();
         String query = "SELECT * FROM TheLoai";
@@ -38,11 +32,6 @@ public class TheLoaiDAO {
         return list;
     }
     
-    /**
-     * Tìm thể loại theo mã loại
-     * @param maLoai Mã loại cần tìm
-     * @return Đối tượng TheLoai nếu tìm thấy, null nếu không tìm thấy
-     */
     public TheLoai findById(int maLoai) {
         TheLoai tl = null;
         String query = "SELECT * FROM TheLoai WHERE MaLoai = ?";

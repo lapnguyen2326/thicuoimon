@@ -8,17 +8,17 @@ public class TheLoai {
     private int maLoai;
     private String tenLoai;
 
-    // Constructor mặc định
+
     public TheLoai() {
     }
 
-    // Constructor đầy đủ tham số
+
     public TheLoai(int maLoai, String tenLoai) {
         this.maLoai = maLoai;
         this.tenLoai = tenLoai;
     }
 
-    // Getter và Setter
+
     public int getMaLoai() {
         return maLoai;
     }

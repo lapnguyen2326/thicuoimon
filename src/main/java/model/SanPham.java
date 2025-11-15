@@ -14,12 +14,8 @@ public class SanPham {
     private int maLoai;
     private Date ngayCapNhat;
     private boolean khuyenMai;
-
-    // Constructor mặc định
     public SanPham() {
     }
-
-    // Constructor đầy đủ tham số
     public SanPham(int maSP, String tenSP, double donGia, String hinh, 
                    int maLoai, Date ngayCapNhat, boolean khuyenMai) {
         this.maSP = maSP;
@@ -31,7 +27,6 @@ public class SanPham {
         this.khuyenMai = khuyenMai;
     }
 
-    // Getter và Setter
     public int getMaSP() {
         return maSP;
     }

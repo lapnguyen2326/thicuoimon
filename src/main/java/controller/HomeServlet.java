@@ -28,14 +28,11 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        // Lấy danh sách 6 sản phẩm khuyến mãi
         SanPhamDAO spDAO = new SanPhamDAO();
         ArrayList<SanPham> listSP = spDAO.getTop6Promotion();
         
-        // Gửi dữ liệu lên JSP
         request.setAttribute("listSanPham", listSP);
         
-        // Forward đến trang home.jsp
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 }
